@@ -1,0 +1,18 @@
+[submodule "user-service"]
+	path = user-service
+	url = https://github.com/nethmidilekshakavi/user-service
+[submodule "item-service"]
+	path = item-service
+	url = https://github.com/nethmidilekshakavi/item-service
+[submodule "claim-service"]
+	path = claim-service
+	url = https://github.com/nethmidilekshakavi/claim-service
+[submodule "api-gateway"]
+	path = api-gateway
+	url = https://github.com/nethmidilekshakavi/api-gateway
+[submodule "config-server"]
+	path = config-server
+	url = https://github.com/nethmidilekshakavi/config-server
+[submodule "eureka-server"]
+	path = eureka-server
+	url = https://github.com/nethmidilekshakavi/eureka-server
