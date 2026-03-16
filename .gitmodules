@@ -14,3 +14,6 @@
 [submodule "eureka-server"]
 	path = eureka-server
 	url = https://github.com/nethmidilekshakavi/eureka-server
+[submodule "user-service"]
+	path = user-service
+	url = https://github.com/nethmidilekshakavi/user-service
