@@ -3,43 +3,36 @@ import type { Claim, ClaimDto } from '../types/claim';
 
 const API_BASE = 'http://localhost:9000';
 
-const api = axios.create({ baseURL: API_BASE });
+const api = axios.create({
+  baseURL: API_BASE,
+  headers: { 'Content-Type': 'application/json' },
+});
 
 export const getClaims = async (): Promise<Claim[]> => {
-  const res = await api.get('/api/v1/claims');
+  const res = await api.get('/api/claims');
   return res.data;
 };
 
 export const getClaimById = async (id: number): Promise<Claim> => {
-  const res = await api.get(`/api/v1/claims/${id}`);
-  return res.data;
-};
-
-export const getClaimsByItem = async (itemId: string): Promise<Claim[]> => {
-  const res = await api.get(`/api/v1/claims/item/${itemId}`);
-  return res.data;
-};
-
-export const getClaimsByUser = async (userId: number): Promise<Claim[]> => {
-  const res = await api.get(`/api/v1/claims/user/${userId}`);
-  return res.data;
-};
-
-export const getClaimsByStatus = async (status: string): Promise<Claim[]> => {
-  const res = await api.get(`/api/v1/claims/status/${status}`);
+  const res = await api.get(`/api/claims/${id}`);
   return res.data;
 };
 
 export const createClaim = async (data: ClaimDto): Promise<Claim> => {
-  const res = await api.post('/api/v1/claims', data);
+  const res = await api.post('/api/claims', data);
   return res.data;
 };
 
-export const updateClaimStatus = async (id: number, status: string): Promise<Claim> => {
-  const res = await api.patch(`/api/v1/claims/${id}/status`, null, { params: { status } });
+export const updateClaimStatus = async (
+  id: number,
+  status: string,
+  role: string
+): Promise<Claim> => {
+  const res = await api.patch(`/api/claims/${id}/status`, null, {
+    params: { status, requestedByRole: role },
+  });
   return res.data;
 };
-
 export const deleteClaim = async (id: number): Promise<void> => {
-  await api.delete(`/api/v1/claims/${id}`);
+  await api.delete(`/api/claims/${id}`);
 };

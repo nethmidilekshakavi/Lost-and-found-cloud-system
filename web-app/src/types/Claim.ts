@@ -3,8 +3,8 @@ export interface Claim {
   itemId: string;
   claimantUserId: number;
   claimantEmail: string;
-  status: 'PENDING' | 'APPROVED' | 'REJECTED';
   description: string;
+  status: 'PENDING' | 'APPROVED' | 'REJECTED';
   createdAt: number;
   updatedAt: number;
 }
