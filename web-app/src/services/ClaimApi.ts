@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { Claim, ClaimDto } from '../types/claim';
 
-const API_BASE = 'http://localhost:9000';
+const API_BASE = 'http://35.200.174.160:9000';
 
 const api = axios.create({
   baseURL: API_BASE,
