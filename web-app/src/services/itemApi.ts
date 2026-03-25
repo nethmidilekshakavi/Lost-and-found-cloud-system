@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { Item } from '../types/item';
 
-const API_BASE = 'http://35.200.174.160:9000';
+const API_BASE = 'http://34.47.225.165:9000';
 
 const api = axios.create({ baseURL: API_BASE });
 
