@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { User, UserDto, LoginRequest, LoginResponse } from '../types/user';
 
-const API_BASE = "http://107.178.245.247";
+const API_BASE = "http://34.47.225.165:9000";
 
 const api = axios.create({
   baseURL: API_BASE,
@@ -9,7 +9,7 @@ const api = axios.create({
 });
 
 export const loginUser = async (data: LoginRequest): Promise<LoginResponse> => {
-  const res = await api.post('/auth/login', data);
+  const res = await api.post('api/auth/login', data);
   return res.data;
 };
 
