@@ -3,13 +3,14 @@ import type { User, UserDto, LoginRequest, LoginResponse } from '../types/user';
 
 const API_BASE = "http://34.47.225.165:9000";
 
+
 const api = axios.create({
   baseURL: API_BASE,
   headers: { 'Content-Type': 'application/json' },
 });
 
 export const loginUser = async (data: LoginRequest): Promise<LoginResponse> => {
-  const res = await api.post('api/auth/login', data);
+  const res = await api.post('/auth/login', data);
   return res.data;
 };
 
